@@ -1,5 +1,5 @@
-from flask import Flask as fl,render_template,request
-app=fl(__name__)
+from flask import Flask,render_template,request
+app=Flask(__name__)
 @app.route("/",methods=["Get","POST"])
 def calculator () :
     result = None
@@ -18,5 +18,5 @@ def calculator () :
                 result =num1 / num2 if num2 != 0 else "Error (Divide by 0)"
         except ValueError : result ="Invalid input"
         return render_template("index.html",result = result)
-    if __name__ == "__main__":
-        app.run(debug= True)
+if __name__ == "__main__":
+    app.run(debug= True)
