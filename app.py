@@ -14,7 +14,7 @@ def calculator () :
                 result =num1 - num2
             elif operation == "Multiply" :
                 result =num1 * num2
-            elif operation == "Multiply" :
+            elif operation == "Divide" :
                 result =num1 / num2 if num2 != 0 else "Error (Divide by 0)"
         except ValueError :
             result ="Invalid input"
