@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
-    <!--Bootstrap CDN-->
+    <!-- Bootstrap & Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
-    >
+    />
   </head>
-  <body
-    class="bg-light d-flex justify-content-center align-items-center vh-100"
-  >
+  <body class="bg-light d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow" style="width: 100%; max-width: 400px">
       <h2 class="text-center mb-4">Simple Calculator</h2>
       <form method="post">
@@ -23,7 +25,7 @@
             name="num1"
             placeholder="Enter First Number"
             required
-          >
+          />
         </div>
         <div class="mb-3">
           <input
@@ -32,18 +34,20 @@
             name="num2"
             placeholder="Enter Second Number"
             required
-          >
+          />
         </div>
 
+        <!-- Round Places (Optional) -->
         <div class="mb-3">
           <input
             type="number"
             class="form-control"
             name="round_places"
-            placeholder="Decimal places"
-            
-          >
+            placeholder="Decimal Places to Round (e.g. 2)"
+            min="0"
+          />
         </div>
+
         <div class="row">
           <div class="col-6 mb-2">
             <button
@@ -102,16 +106,20 @@
               value="Round"
               class="btn btn-dark w-100"
             >
-              <i class="bi bi-arrow-clockwise me-1"></i>Round Off
+              <i class="bi bi-arrow-clockwise me-1"></i> Round Off
             </button>
           </div>
         </div>
       </form>
+
       {% if result is not none %}
       <div class="alert alert-info mt-4 text-center">
-        <h3>Result: {{result}}</h3>
+        <h3>Result: {{ result }}</h3>
       </div>
       {% endif %}
     </div>
+
+    <!-- Optional Bootstrap JS (for interactivity if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
